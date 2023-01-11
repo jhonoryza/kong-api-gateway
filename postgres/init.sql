@@ -1,0 +1,2 @@
+CREATE DATABASE db_konga;
+GRANT ALL PRIVILEGES ON DATABASE db_konga TO konguser;
