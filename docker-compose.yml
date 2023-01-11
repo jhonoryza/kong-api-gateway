@@ -12,7 +12,7 @@ services:
           interval: 30s
           timeout: 30s
           retries: 3
-        restart: unless_stopped
+        restart: unless-stopped
         stdin_open: true
         tty: true
         volumes:
@@ -33,7 +33,7 @@ services:
         KONG_PROXY_ERROR_LOG: ${KONG_PROXY_ERROR_LOG}
         KONG_ADMIN_ERROR_LOG: ${KONG_ADMIN_ERROR_LOG}
         KONG_ADMIN_LISTEN: ${KONG_ADMIN_LISTEN}
-      restart: unless_stopped
+      restart: unless-stopped
       ports:
       - $KONG_PROXY_PORT:8000
       - $KONG_PROXY_SSL_PORT:8443
@@ -54,7 +54,7 @@ services:
         DB_PASSWORD: ${KONGA_DB_PASSWORD}
         NODE_ENV: ${KONGA_ENV}
         #KONGA_HOOK_TIMEOUT: 10000
-      restart: unless_stopped
+      restart: unless-stopped
       ports:
       - $KONGA_PORT:1337
       depends_on:
